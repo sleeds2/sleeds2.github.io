@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<!-- Shouldn't you be playing games instead of reading this? -->
+	<head>
+		<title>BG Stats - Add Play</title>
+		<meta name="MobileOptimized" content="width" />
+		<meta name="HandheldFriendly" content="true" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="https://www.bgstatsapp.com/wp-content/uploads/2016/02/BG-Stats-icon-small-e1454598933841.png" rel="icon" type=image/x-icon" />
+        <link rel="stylesheet" href="bgstats.css" type="text/css" />
+	</head>
+	<body>
+		<img src="icon512round.png" align="left" width="32" style="margin-right: 10px;">
+		<h1>Add a Play to BG Stats</h1>
+
+		<p>You have opened a link to add a Play to Board Game Stats.</p>
+		<p>This link should launch BG Stats automatically if you have the app.<br/>If it doesn't, you can <a href="#" id="bgstatsLink">click here</a> to try to launch the app.</p>
+		<p>If you don't have the app, install Board Game Stats from the links below and open the link again.</p>
+		<p><a href="https://itunes.apple.com/us/app/board-game-stats/id892542000?utm_source=app.bgstatsapp.com"><img src="badge_app_store.png" height="28"></a>&nbsp;<a href="https://play.google.com/store/apps/details?id=nl.eerko.boardgamestats&utm_source=app.bgstatsapp.com"><img src="badge_google_play.png" height="28"></a></p>
+		<p>Read more about Board Game Stats on <a href="https://www.bgstatsapp.com">www.BGStatsApp.com</a>.</p>
+		<script>
+		var link = document.getElementById('bgstatsLink');
+		var timeout;
+		window.addEventListener('blur',function(e){
+			window.clearTimeout(timeout);
+		})
+
+		link.addEventListener('click', function(e) { 
+			var url = window.location.href;
+			timeout = window.setTimeout(function() {
+			  console.log('timeout');
+			  window.location = url;
+			}, 1000);
+
+			window.location = 'bgstats' + url.substring(5);
+			e.preventDefault();
+		});
+		</script>
+	</body>
