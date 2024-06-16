@@ -3,11 +3,21 @@
 <head>
 
 </head>
-<body>
+<body onload=deepLink()>
 
-  <h1>Template</h1>
-  
-  <p>This is a blank template for a web page.</p>
+<script>
+  function deepLink(){
+    {
+var url = window.location.href;
+timeout = window.setTimeout(function() {
+console.log('timeout');
+window.location = url;
+  window.location = 'bgstats' + url.substring(5);
+e.preventDefault();
+});
+
+</script>
+
   
 </body>
 </html>
